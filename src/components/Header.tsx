@@ -1,4 +1,4 @@
-import { useCurrentLesson } from "../store/slices/player";
+import { useCurrentLesson } from "../zustand-store";
 
 export function Header() {
   const { currentLesson, currentModule } = useCurrentLesson();
