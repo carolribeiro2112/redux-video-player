@@ -25,6 +25,7 @@ const stateMock: PlayerState = {
   },
   currentModuleIndex: 0,
   currentLessonIndex: 0,
+  isLoading: false
 }
 
 describe('player slice', () => {
