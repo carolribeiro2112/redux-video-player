@@ -1,9 +1,9 @@
 import ReactPlayer from "react-player";
-import { useDispatch } from "react-redux";
 import { next, useCurrentLesson } from "../store/slices/player";
+import { useAppDispatch } from "../store";
 
 export function Video() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { currentLesson } = useCurrentLesson();
 
@@ -19,7 +19,7 @@ export function Video() {
         controls
         playing
         onEnded={handlePlayNext}
-        url={`http://youtube.com/watch?v=${currentLesson.id}`}
+        url={`http://youtube.com/watch?v=${currentLesson?.id}`}
       />
     </div>
   );
