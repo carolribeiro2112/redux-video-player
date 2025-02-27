@@ -4,14 +4,12 @@ import { useCurrentLesson, useStore } from "../zustand-store";
 
 export function Video() {
   const { currentLesson } = useCurrentLesson();
-  // const { isLoading, next } = useStore((store) => {
-  //   return {
-  //     isLoading: store.isLoading,
-  //     next: store.next,
-  //   };
-  // });
-
-  const { isLoading, next } = useStore.getState();
+  const { isLoading, next } = useStore((store) => {
+    return {
+      isLoading: store.isLoading,
+      next: store.next,
+    };
+  });
 
   const handlePlayNext = () => {
     next();

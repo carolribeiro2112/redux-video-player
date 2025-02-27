@@ -4,21 +4,18 @@ import { Header } from "../components/Header";
 import { Module } from "../components/Module";
 import { useEffect } from "react";
 import { useStore } from "../zustand-store";
-import { useShallow } from "zustand/shallow";
 
 export function Player() {
-  const { course, load } = useStore(
-    useShallow((store) => {
-      return {
-        course: store.course,
-        load: store.load,
-      };
-    })
-  );
+  const { course, load } = useStore((store) => {
+    return {
+      course: store.course,
+      load: store.load,
+    };
+  });
 
   useEffect(() => {
     load();
-  });
+  }, []);
 
   return (
     <div className="h-screen bg-zinc-950 text-zinc-50 flex justify-center items-center">
